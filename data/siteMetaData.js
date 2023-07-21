@@ -1,12 +1,12 @@
 const siteMetadata = {
-  title: "Irfan Mas'udi | Software Developer",
+  title: "Irfan Mas'udi | Master Student in Computer Science",
   author: "Irfan Mas'udi",
   author_image: "/author.png",
-  position: "Software Developer",
+  position: "Master Student in Computer Science",
   location: "Milan, Italy",
   headerTitle: "Irfan Mas'udi",
-  slogan: "Let's start coding",
-  description:"Man in the middle ",
+  slogan: "Statistical Learner",
+  description:"Just a man in the middle",
   language: "en-us",
   theme: "system", // system, dark or light
   siteUrl: "irfanmasoudi.com",
