@@ -1,5 +1,5 @@
 ---
-title: Intro to Statistical Learning
+title: ML1 - Intro to Statistical Learning
 tags: Machine Learning, Statistical learning
 date: 2023-07-20
 description: Machine learning memiliki cakupan yang sagat luas. Banyak metode, pendekatan, dan konsep mengenai machine learning yang beririsan dengan statistic. Statistical learning sangat terkait dengan dasar-dasar statistic as a "white-box" method dalam menyelesaikan masalah-masalah machine learning.
