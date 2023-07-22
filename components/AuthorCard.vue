@@ -14,22 +14,22 @@
           {{ siteMetadata.author }}
         </h1>
         <div class="md:text-lg text-gray-600 dark:text-blue-100">
-          {{ siteMetadata.slogan }}
+          {{ siteMetadata.description }}
         </div>
-        <a
+        <!-- <a
           :href="`mailto:${siteMetadata.email}`"
           class="text-gray-600 md:hidden mt-1 dark:text-blue-100"
         >
           {{ siteMetadata.email }}
-        </a>
+        </a> -->
       </div>
     </div>
 
     <div class="mx-7 hidden md:block">
-      <div class="my-2 text-gray-600 flex dark:text-blue-100">
+      <!-- <div class="my-2 text-gray-600 flex dark:text-blue-100">
         <Mail />
         <a :href="`mailto:${siteMetadata.email}`"> {{ siteMetadata.email }}</a>
-      </div>
+      </div> -->
       <div class="my-2 text-gray-600 flex dark:text-blue-100">
         <Glob />
         <p> {{ siteMetadata.location }}</p>
