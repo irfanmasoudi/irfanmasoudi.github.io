@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="flex flex-col items-center">
-      <div class="flex mb-3 space-x-4">
+      <div class="flex mb-3 space-x-4 mt-5">
         <a
           class="text-sm text-gray-500 transition hover:text-gray-600"
           target="_blank"
@@ -42,6 +42,7 @@
       </div>
       <div class="flex mb-2 space-x-2 text-sm text-gray-500 dark:text-gray-400">
         <div>Copyright © {{ new Date().getFullYear() }}</div>
+        <div> <a href="https://github.com/mdrathik/nuxtjs-tailwind-blog">Style powered by mdrathik</a></div>
       </div>
     </div>
   </footer>
