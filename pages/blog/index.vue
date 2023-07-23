@@ -52,7 +52,7 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "Notes and COffe",
+        content: "Notes and Coffe",
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
