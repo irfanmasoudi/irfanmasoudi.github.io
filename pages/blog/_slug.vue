@@ -31,18 +31,30 @@
     />
 
     <nuxt-content class="prose min-w-full p-5 mx-auto" :document="article" />
+    <section class='comments' aria-labelledby="comment">
+      <h2 id="comment"></h2>
+      <Disqus shortname='irfanmasoudi' />
+  </section>
   </div>
+  
 </template>
 <script>
+
 import Prism from "~/plugins/prism";
 import siteMetaInfo from "@/data/sitemetainfo";
+import { Disqus } from 'vue-disqus'
+
 export default {
+  components:{
+    Disqus
+  },
   data() {
     return {
       title: 0,
       siteMetadata: siteMetaInfo,
     };
   },
+
   async asyncData({ $content, params }) {
     const article = await $content("articles", params.slug).fetch();
     return {
