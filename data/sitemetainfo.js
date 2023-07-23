@@ -6,7 +6,7 @@ const siteMetaInfo = {
   location: "Milan, Italy",
   headerTitle: "Irfan Mas'udi",
   slogan: "Statistical learner",
-  description: "Just a man in the middle.",
+  description: "Just a man in the middle",
   language: "en-us",
   theme: "system", // system, dark or light
   siteUrl: "irfanmasoudi.com",

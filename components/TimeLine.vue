@@ -24,7 +24,7 @@
           >2020 - Now</time
         >
         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-          Through parametric and non-parametric approach to finding out my global optima in Computer Science and Engineering.
+          Through parametric and non-parametric approach to find out my global optima in Computer Science and Engineering.
         </p>
       </li>
       <li class="mb-10 ml-6">

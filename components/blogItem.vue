@@ -4,7 +4,7 @@
       class="relative flex flex-col max-w-3xl lg:ml-auto xl:max-w-none xl:w-[50rem]"
     >
       <h3
-        class="mb-4 text-4xl text-slate-700 tracking-tight font-bold dark:text-slate-200"
+        class="mb-6 text-4xl text-slate-700 tracking-tight font-bold dark:text-slate-200"
       >
         <NuxtLink :to="{ name: 'blog-slug', params: { slug: postSlug } }">
           {{ postTitle }}</NuxtLink
