@@ -2,7 +2,7 @@
 title: ML3 - Algebra mini-course
 tags: Machine Learning, Statistical learning
 date: 2023-08-02
-description: Machine learning memiliki cakupan yang sagat luas. Banyak metode, pendekatan, dan konsep mengenai machine learning yang beririsan dengan statistic. Statistical learning sangat terkait dengan dasar-dasar statistic as a "white-box" method dalam menyelesaikan masalah-masalah machine learning.
+description: Sebelum masuk ke materi utama, saya rasa kita perlu belajar materi-materi algebra yang berkaitan dengan machine learning. Saya coba merangkum beberapa topik yang menurut saya akan berguna untuk memahami materi dan konsep machine learning.
 image: 
 draft: true
 ---
