@@ -2,7 +2,7 @@
 title: ML2 - Machine Learning Process
 tags: Machine Learning, Statistical learning
 date: 2023-07-22
-description: Pada dasarnya machine learning adalah sebuah proses untung memahami data dengan lebih baik tidak hanya sekadar memodelkan suatu data.
+description: Pada dasarnya machine learning adalah sebuah proses untuk memahami data dengan lebih baik tidak hanya sekadar memodelkan suatu data.
 image: 
 draft: true
 ---
