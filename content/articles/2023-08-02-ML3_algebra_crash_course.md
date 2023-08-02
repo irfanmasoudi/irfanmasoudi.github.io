@@ -34,7 +34,7 @@ Vector cross product dari vector berbentuk vektor. $u=v \times w$ magnitude $\lV
 Jika $v \parallel w, \; v \times w = \lVert v \rVert . \lVert w \rVert \sin \alpha = 0$ maka vector v dan w paralel.
 
 ### Matrix Properties
-Jika $A=[a_{ij}]_{m \times n}$ maka transpose dari matrix A, $A^{T}=[a_{ji}]_{n \times m}$. Hal lain yang juga penting kita ketahui, $(A + B)^{T}=A^{T}+B^{T}, \: (AB)^{T}=B^{T}+A^{T}$. Jika $A=A^{T}$ maka $A$ adalah symmetric matrix. Commotativity dan assciativity matrix, $AB \not = BA, \; A(BC) = (AB)C$
+Jika $A=[a_{ij}]_{m \times n}$ maka transpose dari matrix A, $A^{T}=[a_{ji}]_{n \times m}$. Hal lain yang juga penting kita ketahui, $(A + B)^{T}=A^{T}+B^{T}, \: (AB)^{T}=B^{T}+A^{T}$. Jika $A=A^{T}$ maka $A$ adalah symmetric matrix. Commutativity dan associativity matrix, $AB \not = BA, \; A(BC) = (AB)C$
 
 ### Matrix Trace dan Determinant
 Determinant dari suatu matrix dapat dihitung jika matrix $A$ adalah square matrix. $A=[a_{ij}]_{n \times n};\; det(A)=\displaystyle\sum_{j=1}^n a_{ij}A_{ij}; \;i=1,\dots,n$. Sedangkan Trace matrix $A$, $A=[a_{ij}]_{n \times n};\;tr[A]=\displaystyle\sum_{j=1}^n a_{jj}$ 
