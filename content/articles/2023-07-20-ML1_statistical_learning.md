@@ -48,7 +48,7 @@ Misalkan kita memiliki data point $x=\begin{bmatrix} berat \\ tinggi \\ umur \en
 
   <img class="mx-auto w-4/5 max-w-xs" src="/images/3dvector1.png">
 
-Jadi ketika kita melihat suatu data, kita dapat merepresentasikannya kedalam bentuk space. Dengan kata lain, kita bisa melihat setiap axis pada space adalah sebuah fitur dari data. Kombinasi dan transformasi axis dapat kita gunakan untuk mengalisa suatu data. Jika $X\in{\Reals^p} \to Model \to Y\in \cal{P}(X)$ dimana $X$ memiliki p-dimensional space dan output $Y$ adalah powerset dari $X$. Maka clustering adalah pengelompokan atau partitioning $X$ berdasarkan kesamaan dari fiturnya.
+Jadi ketika kita melihat suatu data, kita dapat merepresentasikannya kedalam bentuk space. Dengan kata lain, kita bisa melihat setiap axis pada space adalah sebuah fitur dari data. Kombinasi dan transformasi axis dapat kita gunakan untuk mengalisa suatu data. Jika $X\in{\Reals^p} \to Model \to Y\in \weierp(X)$ dimana $X$ memiliki p-dimensional space dan output $Y$ adalah powerset dari $X$. Maka clustering adalah pengelompokan atau partitioning $X$ berdasarkan kesamaan dari fiturnya.
 
 #### References
 [1] Machine Learning Lecture Prof. Matteo Matteucci\
