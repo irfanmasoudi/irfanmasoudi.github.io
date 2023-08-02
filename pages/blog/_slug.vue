@@ -31,10 +31,10 @@
     />
 
     <nuxt-content class="prose min-w-full p-5 mx-auto" :document="article" />
-    <section class='comments' aria-labelledby="comment">
+    <!-- <section class='comments' aria-labelledby="comment">
       <h2 id="comment"></h2>
       <Disqus shortname='irfanmasoudi' />
-  </section>
+  </section> -->
   </div>
   
 </template>
