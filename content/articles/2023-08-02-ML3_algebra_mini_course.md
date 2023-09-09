@@ -15,7 +15,7 @@ Vector adalah list dari beberapa bilangan yang kita sebut dengan element. Dimens
 
 ### Matrices
 Matriks adalah susunan bilangan berdasarkan rows dan column, dua dimensi.
-$A=[a_{ij}]_{m \times n}=\begin{bmatrix} a_{11} & a_{12} & \dots a_{1n} \\ a_{21} & a_{22} & \dots a_{2n} \\ \dots & \dots & \dots \\ a_{m1} & \dots & a_{mn} \end{bmatrix}$, m adalah row dan n adalah column. 
+$A=[a_{ij}]_{m \times n}=\begin{bmatrix} a_{11} & a_{12} & \dots & a_{1n} \\ a_{21} & a_{22} & \dots & a_{2n} \\ \dots & \dots & \dots & \dots \\ a_{m1} & \dots & \dots & a_{mn} \end{bmatrix}$, m adalah row dan n adalah column. 
 
 ### Interpretasi vector
 <img class="mx-auto w-4/5 max-w-xs" src="/images/vector1.png">
