@@ -38,8 +38,8 @@
           {{ projectDescription }}
         </p>
         <div class="flex flex-row justify-between">
-          <div class="text-gray-400 text-sm font-extralight">
-            {{ projectTech1 }} • {{ projectTech2 }} • {{ ProjectTech3 }}
+          <div class="text-gray-400 text-sm font-light">
+            {{ projectTech1 }} • {{ projectTech2 }} • {{ ProjectTech3 }} • {{ ProjectTech4 }} 
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@ import Folder from "../assets/icon/folder.svg?inline";
 import External from "../assets/icon/external.svg?inline";
 import Github from "../assets/icon/github.svg?inline";
 export default {
-  props: ["title", "description", "href", "github", "tech1", "tech2", "tech3"],
+  props: ["title", "description", "href", "github", "tech1", "tech2", "tech3", "tech4"],
   components: { Folder, External, Github },
   data() {
     return {
@@ -63,6 +63,7 @@ export default {
       projectTech1: this.tech1,
       projectTech2: this.tech2,
       ProjectTech3: this.tech3,
+      ProjectTech4: this.tech4,
     };
   },
 };

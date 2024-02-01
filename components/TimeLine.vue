@@ -21,7 +21,7 @@
         </h3>
         <time
           class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-          >2020 - Now</time
+          >2020 - 2023</time
         >
         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
           Through parametric and non-parametric approach to find out my global optima in Computer Science and Engineering.
