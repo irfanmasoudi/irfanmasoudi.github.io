@@ -31,7 +31,7 @@ const projectsData = [
     tech1: "Tensorflow",
     tech2: "Keras",
     tech3: "matplotlib",
-    tech4: "Pandas",
+    tech4: "Scikit-learn",
   },
 ];
 
