@@ -7,7 +7,7 @@
         Projects
       </h1>
       <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">
-        Some of the projects I've build or been a part of.
+        Some of the projects I've build with love.
       </p>
     </div>
     <main class="relative mb-auto">

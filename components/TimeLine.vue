@@ -37,14 +37,17 @@
           />
         </span>
         <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-          Robotics Developer, ER2C
+          AI Engineer, ER2C
         </h3>
         <time
           class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-          >2019 - 2020</time
+          >2018 - 2019</time
         >
         <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-          Still love to make Robots. Generate money from it, but I just realize that build Start-up is not that easy.
+          •	Led 5 engineers and manage critical thinking process to design control model with analytical approach in the development of the Remotely Operated Vehicle (ROV) and achieved 21.9 % performance improvement from previous model. <br>
+          •	Implemented computer vision and deep learning application for object detection leveraging YOLOv3 with 89.6% accuracy. <br>
+          •	Initiated and published 2 papers indexed by IEEE and 1 Q2-tier Journal.
+
         </p>
       </li>
       <li class="mb-10 ml-6">
