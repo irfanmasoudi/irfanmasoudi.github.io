@@ -17,7 +17,7 @@ const projectsData = [
     href: "https://drive.google.com/file/d/1E4uHqVWyCDYplJog_f4xvtHPWiGoRUG5/view?usp=sharing",
     github: "https://drive.google.com/file/d/1E4uHqVWyCDYplJog_f4xvtHPWiGoRUG5/view?usp=sharing",
     tech1: "Tensorflow",
-    tech2: "Keras",
+    tech2: "Scikit-learn",
     tech3: "matplotlib",
     tech4: "Pandas",
   },
