@@ -55,6 +55,29 @@ const projectsData = [
     tech3: "matplotlib",
     tech4: "Pandas",
   },
+  {
+    title: "Building heatmaps with FullyCNN",
+    description: `Given the high spatial dimention of Sealion population, then classifies sealion type of class by create a heatmaps to show the result.
+    Instead of having categorical result with fully connected layer as the output model, this model use fully Convolutional NN.`,
+    imgSrc: "",
+    href: "https://gist.github.com/irfanmasoudi/69b595f62b25e37aac6036f11809d52e",
+    github: "https://gist.github.com/irfanmasoudi/69b595f62b25e37aac6036f11809d52e",
+    tech1: "Tensorflow",
+    tech2: "Keras",
+    tech3: "matplotlib",
+    tech4: "Pandas",
+  },
+  {
+    title: "Semantic Segmentation with U-Net for Cityscapes dataset",
+    description: `The Cityscapes Dataset focuses on semantic understanding of urban street scenes. The dataset contains captured images from front car camera and provides labeled mask (Ground truth).`,
+    imgSrc: "",
+    href: "https://gist.github.com/irfanmasoudi/86331d8be41e90aa9ed3215a8d853820",
+    github: "https://gist.github.com/irfanmasoudi/86331d8be41e90aa9ed3215a8d853820",
+    tech1: "Tensorflow",
+    tech2: "Keras",
+    tech3: "matplotlib",
+    tech4: "Pandas",
+  },
 ];
 
 export default projectsData;
