@@ -49,7 +49,7 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "my projects",
+        content: "Irfan's Projects",
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
