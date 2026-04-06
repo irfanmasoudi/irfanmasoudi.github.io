@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: My project collection summary.
+description: Some projects.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: 
 horizontal: false
 ---
 
@@ -18,7 +18,7 @@ Implemented BPE tokenizer, Transformer decoder architecture, and autoregressive 
 Implemented ViT architecture and training pipeline from scratch in PyTorch for image classification   
 [code](https://github.com/irfanmasoudi/vit-scratch/)
 
-<h2 class="year" >2020</h2>
+<h2 class="year" >2024</h2>
 ***Semantic Segmentation***  
 Built U-Net for urban scene understanding; achieved 88.5% test accuracy and 0.40 mean IoU  
 [code](https://gist.github.com/irfanmasoudi/ebd50ee09618f3efce69d4398a87ab86)
