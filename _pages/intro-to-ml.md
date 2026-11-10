@@ -47,7 +47,7 @@ L(w) := \frac{1}{2} \sum_{i=1}^{N}
 \left( t_i - \sum_{j=1}^{D} x_{ij} w_j \right)^2 .
 $$
 
-Defining the design matrix
+Defining the design matrix (each row is an input vector $x_i$)
 
 $$
 X =
@@ -62,19 +62,40 @@ x_{11} & \cdots & x_{1D} \\
 \vdots & \ddots & \vdots \\
 x_{N1} & \cdots & x_{ND}
 \end{pmatrix}
+\in \mathbb{R}^{N \times D},
 $$
 
-the loss can be written equivalently in matrix form as
+and the residual (error) vector
 
 $$
-L(w) := \frac{1}{2} \lVert t - Xw \rVert_2^2
+r := t - Xw =
+\begin{pmatrix}
+r_1 \\
+\vdots \\
+r_N
+\end{pmatrix}
+=
+\begin{pmatrix}
+t_1 - \sum_{j=1}^{D} x_{1j} w_j \\
+\vdots \\
+t_N - \sum_{j=1}^{D} x_{Nj} w_j
+\end{pmatrix}
+\in \mathbb{R}^{N},
+$$
+
+the loss can be written equivalently as
+
+$$
+L(w) = \frac{1}{2} \lVert r \rVert_2^2
+       = \frac{1}{2} r^\top r
+       = \frac{1}{2} \sum_{i=1}^{N} r_i^2
        = \frac{1}{2} (t - Xw)^\top (t - Xw) .
 $$
 
 #### Minimizing the loss
 
-To minimize the loss we compute its derivatives with respect to each component
-of $w$:
+To minimize the loss we compute its gradient with respect to each component of
+$w$:
 
 $$
 \frac{\partial L(w)}{\partial w} :=
@@ -82,32 +103,65 @@ $$
        \frac{\partial L(w)}{\partial w_D} \right).
 $$
 
-There are two equivalent ways to write the derivative: an elementwise
-(traditional) derivative and a matrix derivative.
+There are two equivalent ways to compute it: an elementwise (traditional)
+derivative and a matrix derivative.
 
-**Traditional (elementwise) derivative:**
+**Traditional (elementwise) derivative.** Since only the term $x_{ih} w_h$
+depends on $w_h$ inside the inner sum,
 
 $$
+\begin{aligned}
 \left( \frac{\partial L(w)}{\partial w} \right)_h
 = \frac{\partial L(w)}{\partial w_h}
-= \frac{\partial}{\partial w_h}
+&= \frac{\partial}{\partial w_h}
 \left[
 \frac{1}{2} \sum_{i=1}^{N}
 \left( t_i - \sum_{j=1}^{D} x_{ij} w_j \right)^2
-\right].
+\right] \\
+&= \frac{1}{2} \sum_{i=1}^{N} 2
+\left( t_i - \sum_{j=1}^{D} x_{ij} w_j \right)(-x_{ih}) \\
+&= -\sum_{i=1}^{N} x_{ih}
+\left( t_i - \sum_{j=1}^{D} x_{ij} w_j \right).
+\end{aligned}
 $$
 
-**Matrix derivative:**
+For example, with $D = 3$ the inner sum is
+$x_{i1} w_1 + x_{i2} w_2 + x_{i3} w_3$; for $h = 2$ the derivative picks out the
+coefficient $x_{i2}$ of $w_2$.
+
+**Matrix derivative.** Starting from the residual vector $r = t - Xw$, and using
+$\partial r / \partial w = -X$,
 
 $$
+\begin{aligned}
 \frac{\partial L(w)}{\partial w}
-= \frac{\partial}{\partial w}
-\left[ \frac{1}{2} (t - Xw)^\top (t - Xw) \right].
+&= \frac{\partial}{\partial w}
+\left[ \frac{1}{2} (t - Xw)^\top (t - Xw) \right] \\
+&= \frac{\partial}{\partial w}
+\left[ \frac{1}{2} r^\top r \right]
+= -X^\top r
+= -X^\top (t - Xw).
+\end{aligned}
 $$
+
+Written componentwise, this is
+
+$$
+\left( \frac{\partial L(w)}{\partial w} \right)_h
+= -\begin{pmatrix} x_{1h} & \cdots & x_{Nh} \end{pmatrix}
+\begin{pmatrix} r_1 \\ \vdots \\ r_N \end{pmatrix}
+= -\sum_{i=1}^{N} x_{ih} r_i
+= -\sum_{i=1}^{N} x_{ih}
+\left( t_i - \sum_{j=1}^{D} x_{ij} w_j \right),
+$$
+
+which matches the elementwise derivative.
 
 Setting the gradient to zero gives the normal equations
 
 $$
+-X^\top (t - Xw) = 0
+\quad\Longrightarrow\quad
 X^\top X w = X^\top t,
 $$
 
