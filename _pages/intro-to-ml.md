@@ -6,6 +6,8 @@ description: Linear algebra and statistics recap for machine learning.
 nav: false
 toc:
   sidebar: right
+chart:
+  plotly: true
 ---
 
 This note is a recap of the mathematical background used in the Machine
@@ -128,6 +130,68 @@ $$
   are not deviated by the transformation $A$.
 - The **eigenvalues** $\lambda_1, \dots, \lambda_N$ are the stretch factors for
   the directions $v_i$.
+
+#### Graphical representation
+
+When $v$ is an eigenvector of $A$, applying $A$ does not change its direction: it
+only stretches it by the eigenvalue $\lambda$, so $A v$ lies on the same line
+through the origin as $v$. In the interactive plot below we use
+
+$$
+A = \begin{pmatrix} 1 & 2 \\ 1 & 0 \end{pmatrix},
+\qquad
+v = \begin{pmatrix} 2 \\ 1 \end{pmatrix},
+\qquad
+\lambda = 2,
+\qquad
+A v = \begin{pmatrix} 4 \\ 2 \end{pmatrix} = 2v .
+$$
+
+```plotly
+{
+  "data": [],
+  "layout": {
+    "title": { "text": "Eigenvector: A v = λ v" },
+    "xaxis": {
+      "range": [-0.8, 5],
+      "zeroline": true,
+      "zerolinecolor": "#999999",
+      "title": { "text": "x" },
+      "showgrid": true,
+      "gridcolor": "rgba(128,128,128,0.25)"
+    },
+    "yaxis": {
+      "range": [-0.8, 3],
+      "scaleanchor": "x",
+      "scaleratio": 1,
+      "zeroline": true,
+      "zerolinecolor": "#999999",
+      "title": { "text": "y" },
+      "showgrid": true,
+      "gridcolor": "rgba(128,128,128,0.25)"
+    },
+    "showlegend": false,
+    "hovermode": "closest",
+    "margin": { "l": 50, "r": 30, "t": 50, "b": 50 },
+    "shapes": [
+      { "type": "line", "x0": 2, "x1": 2, "y0": 0, "y1": 1, "line": { "color": "#999999", "width": 1, "dash": "dot" } },
+      { "type": "line", "x0": 0, "x1": 2, "y0": 1, "y1": 1, "line": { "color": "#999999", "width": 1, "dash": "dot" } },
+      { "type": "line", "x0": 4, "x1": 4, "y0": 0, "y1": 2, "line": { "color": "#999999", "width": 1, "dash": "dot" } },
+      { "type": "line", "x0": 0, "x1": 4, "y0": 2, "y1": 2, "line": { "color": "#999999", "width": 1, "dash": "dot" } }
+    ],
+    "annotations": [
+      { "x": 4, "y": 2, "xref": "x", "yref": "y", "ax": 0, "ay": 0, "axref": "x", "ayref": "y", "showarrow": true, "arrowhead": 3, "arrowsize": 1.5, "arrowwidth": 6, "arrowcolor": "#ff9896", "text": "" },
+      { "x": 2, "y": 1, "xref": "x", "yref": "y", "ax": 0, "ay": 0, "axref": "x", "ayref": "y", "showarrow": true, "arrowhead": 3, "arrowsize": 1.5, "arrowwidth": 6, "arrowcolor": "#d62728", "text": "" },
+      { "x": 3.1, "y": 2.05, "xref": "x", "yref": "y", "text": "<b>Av = λv</b>", "showarrow": false, "font": { "color": "#d62728", "size": 15 }, "align": "left" },
+      { "x": 0.95, "y": 0.72, "xref": "x", "yref": "y", "text": "<b>v</b>", "showarrow": false, "font": { "color": "#d62728", "size": 15 } },
+      { "x": 2, "y": -0.35, "xref": "x", "yref": "y", "text": "x", "showarrow": false, "font": { "color": "#888888", "size": 13 } },
+      { "x": 4, "y": -0.35, "xref": "x", "yref": "y", "text": "λx", "showarrow": false, "font": { "color": "#888888", "size": 13 } },
+      { "x": -0.45, "y": 1, "xref": "x", "yref": "y", "text": "y", "showarrow": false, "font": { "color": "#888888", "size": 13 } },
+      { "x": -0.45, "y": 2, "xref": "x", "yref": "y", "text": "λy", "showarrow": false, "font": { "color": "#888888", "size": 13 } }
+    ]
+  }
+}
+```
 
 In matrix form, for a generic pair $(\lambda, v)$,
 
@@ -318,7 +382,6 @@ e^{-\frac{(x - \mu)^2}{2\sigma^2}},
 \qquad
 F(x; \mu, \sigma) = \int_{-\infty}^{x} f(t; \mu, \sigma) \, dt .
 $$
-
 
 #### Estimating the distributions
 
