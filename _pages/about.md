@@ -24,6 +24,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am an AI/ML Engineer with 5+ years of experience bridging research and real-world production systems. Currently, I work at Samsung Research Indonesia, where I design and deploy large-scale machine learning solutions powering consumer-facing products.
+I'm an AI/ML Engineer with 5+ years of experience taking machine learning from research to production. At Samsung Research Indonesia, I design and deploy large-scale ML systems that power consumer products.
 
-Beyond engineering, I have a strong interest in the mathematical foundations of machine learning and deep learning. I enjoy understanding the theory behind models—optimization, probability—which strengthens my ability to design robust and efficient AI/ML systems. This foundation was further developed during my Master’s studies in Computer Science and Engineering at Politecnico di Milano.
+Beyond engineering, I'm deeply interested in the mathematical foundations of machine learning and deep learning, particularly statistical learning, probabilistic modeling, and optimization. I enjoy understanding the theory behind it, which bringing that understanding into practical ML system design.
+
+My Master's in Computer Science and Engineering at Politecnico di Milano sparked my curiosity, which I've continued to explore beyond academia.

@@ -1,0 +1,14 @@
+- title: Machine Learning
+  permalink: /notes/machine-learning/
+  description: >-
+    Lecture notes and recaps for the Machine Learning course, from the
+    mathematical background to supervised learning and reinforcement learning.
+  notes:
+    - title: Intro to ML
+      permalink: /notes/machine-learning/intro-to-ml/
+      description: >-
+        Linear algebra and statistics recap: least squares, the eigenvector
+        problem, distributions, confidence intervals, hypothesis testing, and
+        the Bayesian approach.
+      date: 2026-11-10
+      reading_time: 15 min
