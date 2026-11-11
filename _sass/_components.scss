@@ -259,3 +259,49 @@ ul.task-list input[type="checkbox"] {
 .d2h-diff-table {
   position: relative;
 }
+
+// Notes
+
+.notes {
+  .note-card-link {
+    display: block;
+    margin-bottom: 1.5rem;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+
+      .card-title {
+        color: var(--global-theme-color);
+      }
+    }
+  }
+
+  .card {
+    background-color: var(--global-card-bg-color);
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.5rem;
+    transition: box-shadow 0.2s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .card-title {
+    margin-bottom: 0.75rem;
+    color: var(--global-text-color);
+  }
+
+  .card-text {
+    color: var(--global-text-color-light);
+  }
+
+  .note-meta {
+    margin-bottom: 0;
+    color: var(--global-text-color-light);
+    font-size: 0.875rem;
+  }
+}

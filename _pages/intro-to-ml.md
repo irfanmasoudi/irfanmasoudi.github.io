@@ -1,13 +1,32 @@
 ---
 layout: page
 title: Intro to ML
-permalink: /notes/intro-to-ml/
+permalink: /notes/machine-learning/intro-to-ml/
 description: Linear algebra and statistics recap for machine learning.
 nav: false
 toc:
   sidebar: right
 chart:
   plotly: true
+_styles: |
+  .hypothesis-table {
+    border-collapse: collapse;
+    margin: 1.5rem auto;
+    color: var(--global-text-color);
+  }
+  .hypothesis-table th,
+  .hypothesis-table td {
+    border: 1px solid var(--global-divider-color);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .hypothesis-table thead th {
+    font-weight: bold;
+  }
+  .hypothesis-table tbody th[scope="rowgroup"] {
+    white-space: nowrap;
+  }
 ---
 
 This note is a recap of the mathematical background used in the Machine
@@ -234,8 +253,8 @@ $$
       { "type": "line", "x0": 0, "x1": 4, "y0": 2, "y1": 2, "line": { "color": "#999999", "width": 1, "dash": "dot" } }
     ],
     "annotations": [
-      { "x": 4, "y": 2, "xref": "x", "yref": "y", "ax": 0, "ay": 0, "axref": "x", "ayref": "y", "showarrow": true, "arrowhead": 3, "arrowsize": 1.5, "arrowwidth": 6, "arrowcolor": "#ff9896", "text": "" },
-      { "x": 2, "y": 1, "xref": "x", "yref": "y", "ax": 0, "ay": 0, "axref": "x", "ayref": "y", "showarrow": true, "arrowhead": 3, "arrowsize": 1.5, "arrowwidth": 6, "arrowcolor": "#d62728", "text": "" },
+      { "x": 4, "y": 2, "xref": "x", "yref": "y", "ax": 0, "ay": 0, "axref": "x", "ayref": "y", "showarrow": true, "arrowhead": 3, "arrowsize": 0.8, "arrowwidth": 4, "arrowcolor": "#ff9896", "text": "" },
+      { "x": 2, "y": 1, "xref": "x", "yref": "y", "ax": 0, "ay": 0, "axref": "x", "ayref": "y", "showarrow": true, "arrowhead": 3, "arrowsize": 0.8, "arrowwidth": 4, "arrowcolor": "#d62728", "text": "" },
       { "x": 3.1, "y": 2.05, "xref": "x", "yref": "y", "text": "<b>Av = λv</b>", "showarrow": false, "font": { "color": "#d62728", "size": 15 }, "align": "left" },
       { "x": 0.95, "y": 0.72, "xref": "x", "yref": "y", "text": "<b>v</b>", "showarrow": false, "font": { "color": "#d62728", "size": 15 } },
       { "x": 2, "y": -0.35, "xref": "x", "yref": "y", "text": "x", "showarrow": false, "font": { "color": "#888888", "size": 13 } },
@@ -280,9 +299,9 @@ $$
 #### Two useful definitions
 
 - A matrix $A$ is **positive definite** if $x^\top A x > 0$ for all
-  $x \in \mathbb{R}^N \setminus \{0\}$.
+  $x \in \mathbb{R}^N \setminus \lbrace 0 \rbrace$.
 - A matrix $A$ is **semi-positive definite** if $x^\top A x \ge 0$ for all
-  $x \in \mathbb{R}^N \setminus \{0\}$.
+  $x \in \mathbb{R}^N \setminus \lbrace 0 \rbrace$.
 
 An easier way to check these properties is through the eigenvalues:
 
@@ -308,7 +327,7 @@ $$
 For instance, in a 20-faced die:
 
 $$
-E = \{1, \dots, 20\},
+E = \lbrace 1, \dots, 20 \rbrace,
 \qquad
 P(X = i) = \frac{1}{20} .
 $$
@@ -362,10 +381,21 @@ $$
 P(X = i) .
 $$
 
-For instance, in a 20-faced die:
+For instance, in a 20-faced die the expected value is
 
 $$
-\mathbb{E}[X] = \sum_{i=1}^{20} \frac{i}{20} = \frac{21}{2} = 10.5 .
+\mathbb{E}[X] = \sum_{i=1}^{20} \frac{i}{20}
+= \frac{1}{20} \cdot \frac{20(20 + 1)}{2}
+= \frac{21}{2},
+$$
+
+and the variance is
+
+$$
+\operatorname{Var}(X)
+= \sum_{i=1}^{20} \frac{\left( \frac{21}{2} - i \right)^2}{20}
+= \frac{133}{4}
+\approx 33.25 .
 $$
 
 Sometimes we compute the standard deviation instead of the variance:
@@ -376,21 +406,76 @@ $$
 
 #### Continuous random variables
 
-If the set $E$ is not discrete, i.e. $E \subseteq \mathbb{R}$, we define the
-**probability density function** (pdf):
+If the set $E$ is not discrete, i.e. $E \subseteq \mathbb{R}$, the random variable
+is continuous and we define the **probability density function** (pdf):
 
 $$
 f(x) := \lim_{\delta x \to 0}
-\frac{P(x \le X \le x + \delta x)}{\delta x},
+\frac{P(x \le X \le x + \delta x)}{\delta x}.
 $$
 
-with properties
+Here $\Omega$ is the domain of the random variable, i.e. the set of values that
+can actually occur. For a small interval of width $\delta x$,
+
+$$
+P(x \le X \le x + \delta x) \approx f(x)\,\delta x,
+$$
+
+so the pdf measures probability per unit length. Its properties are
 
 $$
 f(x) \ge 0 \ \forall x \in \Omega,
 \qquad
-\int_{x \in \Omega} f(x) \, dx = 1 .
+\int_{x \in \Omega} f(x) \, dx = 1,
 $$
+
+i.e. the density is non-negative everywhere, and the total probability (the
+integral of the density over the whole domain $\Omega$) equals one. The plot
+below illustrates this: the shaded area over a small interval $[x, x+\delta x]$
+approximates the probability that $X$ falls in that interval.
+
+```plotly
+{
+  "data": [
+    {
+      "type": "scatter",
+      "mode": "lines",
+      "x": [-4, -3.75, -3.5, -3.25, -3.0, -2.75, -2.5, -2.25, -2.0, -1.75, -1.5, -1.25, -1.0, -0.75, -0.5, -0.25, 0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0],
+      "y": [0.0001, 0.0004, 0.0009, 0.002, 0.0044, 0.0091, 0.0175, 0.0317, 0.054, 0.0863, 0.1295, 0.1826, 0.242, 0.3011, 0.3521, 0.3867, 0.3989, 0.3867, 0.3521, 0.3011, 0.242, 0.1826, 0.1295, 0.0863, 0.054, 0.0317, 0.0175, 0.0091, 0.0044, 0.002, 0.0009, 0.0004, 0.0001],
+      "line": { "color": "#1f77b4", "width": 3 },
+      "hoverinfo": "skip",
+      "showlegend": false
+    },
+    {
+      "type": "scatter",
+      "mode": "lines",
+      "x": [0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9],
+      "y": [0.3521, 0.3429, 0.3332, 0.323, 0.3123, 0.3011, 0.2897, 0.278, 0.2661],
+      "line": { "color": "#d62728", "width": 2 },
+      "fill": "tozeroy",
+      "fillcolor": "rgba(214,39,40,0.30)",
+      "hoverinfo": "skip",
+      "showlegend": false
+    }
+  ],
+  "layout": {
+    "title": { "text": "Probability density function f(x)" },
+    "xaxis": { "title": { "text": "x" }, "range": [-4, 4], "zeroline": false },
+    "yaxis": { "title": { "text": "f(x)" }, "range": [0, 0.45] },
+    "showlegend": false,
+    "margin": { "l": 55, "r": 30, "t": 50, "b": 55 },
+    "shapes": [
+      { "type": "line", "x0": 0.5, "x1": 0.5, "y0": 0, "y1": 0.3521, "line": { "color": "#d62728", "width": 1, "dash": "dot" } },
+      { "type": "line", "x0": 0.9, "x1": 0.9, "y0": 0, "y1": 0.2661, "line": { "color": "#d62728", "width": 1, "dash": "dot" } }
+    ],
+    "annotations": [
+      { "x": 0.5, "y": -0.03, "xref": "x", "yref": "y", "text": "x", "showarrow": false, "font": { "size": 13 } },
+      { "x": 0.9, "y": -0.03, "xref": "x", "yref": "y", "text": "x+δx", "showarrow": false, "font": { "size": 13 } },
+      { "x": 1.5, "y": 0.33, "xref": "x", "yref": "y", "text": "P(x ≤ X ≤ x+δx) ≈ f(x)δx", "showarrow": true, "ax": 0.9, "ay": 0.27, "axref": "x", "ayref": "y", "arrowcolor": "#d62728", "font": { "size": 12 } }
+    ]
+  }
+}
+```
 
 The **cumulative density function** (CDF) is defined as
 
@@ -456,7 +541,7 @@ respectively.
 Let us consider the empirical expected value $\bar{X}$. We recall the Central
 Limit Theorem (CLT):
 
-> **Theorem (Central Limit Theorem).** Assume $\{X_1, \dots, X_n\}$ is a
+> **Theorem (Central Limit Theorem).** Assume $\lbrace X_1, \dots, X_n \rbrace$ is a
 > sequence of independent and identically distributed (i.i.d.) random variables
 > with $\mathbb{E}[X_i] = \mu$ and $\operatorname{Var}[X_i] = \sigma^2 < \infty$.
 > Then
@@ -527,7 +612,7 @@ and then uses the data to provide evidence that either one or the other holds.
 
 #### Basic Gaussian test
 
-Given the data $\{x_1, \dots, x_n\}$ we have
+Given the data $\lbrace x_1, \dots, x_n \rbrace$ we have
 
 $$
 \bar{X} \sim \mathcal{N}\left( \mu, \frac{\sigma^2}{n} \right)
@@ -542,15 +627,92 @@ $$
 P\left( t < z_{\alpha/2} \ \lor \ t > z_{1-\alpha/2} \right) = \alpha .
 $$
 
-| Decision          | Fail to reject $H_0$ | Reject $H_0$           |
-| ----------------- | -------------------- | ---------------------- |
-| **True $H_0$**    | Correct              | Type I error ($\alpha$)|
-| **True $H_1$**    | Type II error        | Correct                |
+<div class="table-responsive">
+  <table class="hypothesis-table">
+    <thead>
+      <tr>
+        <th colspan="2" rowspan="2"></th>
+        <th colspan="2">Decision</th>
+      </tr>
+      <tr>
+        <th scope="col">Fail to reject $H_0$</th>
+        <th scope="col">Reject $H_0$</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="rowgroup" rowspan="2">True</th>
+        <th scope="row">$H_0$</th>
+        <td>Correct</td>
+        <td>Type I error ($\alpha$)</td>
+      </tr>
+      <tr>
+        <th scope="row">$H_1$</th>
+        <td>Type II error</td>
+        <td>Correct</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 #### P-value
 
 To avoid specifying the confidence $\alpha$, we can let the data tell us how
-confident we can be about their correspondence to a specific hypothesis:
+confident we can be about their correspondence to a specific hypothesis. The
+p-value is the probability of observing data at least as extreme as the observed
+data point, assuming $H_0$ is true; it is the area of the tail beyond the
+observed value.
+
+```plotly
+{
+  "data": [
+    {
+      "type": "scatter",
+      "mode": "lines",
+      "x": [-4, -3.75, -3.5, -3.25, -3.0, -2.75, -2.5, -2.25, -2.0, -1.75, -1.5, -1.25, -1.0, -0.75, -0.5, -0.25, 0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0],
+      "y": [0.0001, 0.0004, 0.0009, 0.002, 0.0044, 0.0091, 0.0175, 0.0317, 0.054, 0.0863, 0.1295, 0.1826, 0.242, 0.3011, 0.3521, 0.3867, 0.3989, 0.3867, 0.3521, 0.3011, 0.242, 0.1826, 0.1295, 0.0863, 0.054, 0.0317, 0.0175, 0.0091, 0.0044, 0.002, 0.0009, 0.0004, 0.0001],
+      "line": { "color": "#1f77b4", "width": 3 },
+      "hoverinfo": "skip",
+      "showlegend": false
+    },
+    {
+      "type": "scatter",
+      "mode": "lines",
+      "x": [2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0],
+      "y": [0.054, 0.044, 0.0355, 0.0283, 0.0224, 0.0175, 0.0136, 0.0104, 0.0079, 0.006, 0.0044, 0.0033, 0.0024, 0.0017, 0.0012, 0.0009, 0.0006, 0.0004, 0.0003, 0.0002, 0.0001],
+      "line": { "color": "#2ca02c", "width": 2 },
+      "fill": "tozeroy",
+      "fillcolor": "rgba(44,160,44,0.45)",
+      "hoverinfo": "skip",
+      "showlegend": false
+    },
+    {
+      "type": "scatter",
+      "mode": "markers",
+      "x": [2.0],
+      "y": [0.054],
+      "marker": { "color": "#d62728", "size": 11 },
+      "hoverinfo": "skip",
+      "showlegend": false
+    }
+  ],
+  "layout": {
+    "title": { "text": "P-value: area beyond the observed data point" },
+    "xaxis": { "title": { "text": "Set of possible results" }, "range": [-4.3, 4.3], "zeroline": false },
+    "yaxis": { "title": { "text": "Probability" }, "range": [0, 0.46] },
+    "showlegend": false,
+    "margin": { "l": 55, "r": 30, "t": 50, "b": 55 },
+    "shapes": [
+      { "type": "line", "x0": 2.0, "x1": 2.0, "y0": 0, "y1": 0.054, "line": { "color": "#888888", "width": 1, "dash": "dot" } }
+    ],
+    "annotations": [
+      { "x": 0, "y": 0.43, "xref": "x", "yref": "y", "text": "Most likely observation", "showarrow": false, "font": { "size": 12 } },
+      { "x": 2.55, "y": 0.105, "xref": "x", "yref": "y", "text": "observed data point", "showarrow": false, "font": { "color": "#d62728", "size": 12 } },
+      { "x": 3.15, "y": 0.035, "xref": "x", "yref": "y", "text": "p-value", "showarrow": false, "font": { "color": "#2ca02c", "size": 13 } }
+    ]
+  }
+}
+```
 
 - Small p-values imply that we are confident that the $H_1$ hypothesis holds.
 - Large p-values imply that we are not able to tell that the $H_0$ hypothesis
